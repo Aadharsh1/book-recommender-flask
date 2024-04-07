@@ -45,7 +45,7 @@ Start by selecting your genres and inputting a plot, then hit the "Get Recommend
 
 Aadharsh Rajagopal - aadharshrajagopal13@gmail.com
 
-Project Link: [https://github.com/aadharsh1/book-recommender-flask](https://github.com/yourusername/book-recommender-flask)
+Project Link: [https://github.com/Aadharsh1/book-recommender-flask)
 
 Made with ❤️ and Python
 
