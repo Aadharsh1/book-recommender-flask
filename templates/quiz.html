@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendation Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            padding-top: 2rem;
+        }
+        h2, h3 {
+            color: #34568B;
+        }
+        .form-control, .form-check-label {
+            margin-bottom: 0.5rem;
+        }
+        .form-section {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .btn-primary, .btn-success {
+            background-color: #34568B;
+            border-color: #34568B;
+        }
+        .btn-primary:hover, .btn-success:hover {
+            background-color: #263D5E;
+            border-color: #263D5E;
+        }
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <section id="quiz" class="form-section">
+            <h3>Discover your next favorite book!</h3>
+            <form id="quiz-form" method="POST" action="/recommender">
+                <p>Select the genres you're interested in to get personalized book recommendations:</p>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="genre[]" value="Young Adult" id="youngAdult">
+                        <label class="form-check-label" for="youngAdult">Young Adult</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="genre[]" value="Fiction" id="fiction">
+                        <label class="form-check-label" for="fiction">Fiction</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="genre[]" value="Dystopia" id="dystopia">
+                        <label class="form-check-label" for="dystopia">Dystopia</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="genre[]" value="Fantasy" id="fantasy">
+                        <label class="form-check-label" for="fantasy">Fantasy</label>
+                    </div>
+                    
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="genre[]" value="Science Fiction" id="Science Fiction">
+                        <label class="form-check-label" for="Science Fiction">Science Fiction</label>
+                    </div>
+    
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="genre[]" value="Romance" id="Romance">
+                        <label class="form-check-label" for="Romance">Romance</label>
+                    </div>
+    
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="genre[]" value="Adventure" id="Adventure">
+                        <label class="form-check-label" for="Adventure">Adventure</label>
+                    </div>
+    
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="genre[]" value="Teen" id="Teen">
+                        <label class="form-check-label" for="Teen">Teen</label>
+                    </div>
+    
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="genre[]" value="Action" id="Action">
+                        <label class="form-check-label" for="Action">Action</label>
+                    </div>
+    
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="genre[]" value="Classics" id="classics">
+                        <label class="form-check-label" for="classics">Classics</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="plot">Enter a plot you would be interested in 20 words or less</label>
+                    <input type="text" class="form-control" id="plot" placeholder="E.g., A boy born in the wizarding world fights against evil" name="plot">
+                </div>
+                <button type="submit" class="btn btn-success">Get Recommendations</button>
+            </form>
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Book Recommendations</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            padding-top: 2rem;
+        }
+        h1 {
+            color: #34568B;
+            font-size: 2.5rem;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            border: none;
+        }
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card-img-top {
+            width: 100%;
+            height: 15vw;
+            object-fit: cover;
+        }
+        .card-title {
+            color: #34568B;
+            font-size: 1.25rem;
+        }
+        .card-text {
+            font-size: 1rem;
+        }
+        .text-muted {
+            font-size: 0.9rem;
+        }
+        .mb-4, .mb-3 {
+            margin-bottom: 1.5rem!important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">User's Book Recommendations</h1>
+        <!-- Template logic to display recommendations -->
+        {% if recommendations %}
+            <div class="row">
+                {% for book in recommendations %}
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100">
+                            <img src="{{ book.coverImg }}" class="card-img-top" alt="{{ book.title }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ book.title }}</h5>
+                                <p class="card-text">Author: {{ book.author }}</p>
+                                <p class="card-text">Rating: {{ book.rating }}</p>
+                                <p class="card-text"><small class="text-muted">Price: ${{ book.price }}</small></p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No recommendations found. Try adjusting your preferences!</p>
+        {% endif %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
